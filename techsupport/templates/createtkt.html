@@ -1,0 +1,73 @@
+
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="row">
+  <div class="col">
+    <h4>{{msg}}</h4>
+  <h4>New Ticket</h4>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label class="h6" >Subject</label><br>
+      <input type="text" name="subject" class="form-control ">
+    </div><br>
+    
+    <div class="form-group">
+        <label class="h6">Description</label><br>
+        <textarea class="form-control" rows="5" cols="50" name="desc">
+          
+          </textarea>
+</div><br>
+<div class="form-group">
+    <label class="h6" >Department</label><br>
+    <select class="form-control" name="dept">
+        <option>Sales</option>
+        <option>Marketing</option>
+       
+      </select>
+
+</div><br>
+
+<div class="form-group">
+
+  <label class="h6" >Categeory</label><br>
+  <select class="form-control" name="catgry">
+      <option>Inside sales</option>
+      <option>Outside sales</option>
+      
+    </select>
+</div><br>
+<br>
+
+<div class="form-group">
+
+  <label class="h6" >Priority</label><br>
+  <select class="form-control" name="priority">
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+    </select>
+</div><br>
+
+<div class="form-group">
+  <label class="h6">Name</label><br>
+  <input type="text" name="uname" class="form-control " value="{{user.username}}">
+    
+</div>
+<br>
+<div class="form-group">
+  <label class="h6" for="exampleInputEmail1">Email</label><br>
+  <input type="email" name="usremail" class="form-control " value="{{user.email}}">
+    
+</div>
+<br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+
+        
+
+{% endblock contents %}

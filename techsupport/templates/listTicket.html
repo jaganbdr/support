@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+{% block contents %}
+
+<h4>Ticket List</h4>
+<br>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Ticket No</th>
+      <th scope="col">Ticket Id</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Description</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Ticket Status</th>
+      <th scope="col">Category</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {% for d in info %}
+    <tr>
+      
+      <th scope="row">{{d.ticketNumber}}</th>
+      <td>{{d.id}}</td>
+      <td> {{d.subject}}</td>
+      <td>{{d.description}}</td>
+      <td>{{d.priority}}</td>
+      <td>{{d.status}}</td>
+      <td>{{d.category}}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+
+
+{% endblock contents %}
+        
+
+ 
+       
