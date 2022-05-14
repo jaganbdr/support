@@ -1,0 +1,73 @@
+
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="row">
+  <div class="col">
+    <h4>{{msg}}</h4>
+    <h4>{{response}}</h4>
+    <h4>{{data}}</h4>
+  <h4>Update Ticket</h4>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label class="h6" >Ticket Id</label><br>
+      <input type="text" name="subject" class="form-control " value="{{data.id}}">
+    </div><br>
+    <div class="form-group">
+      <label class="h6" >Subject</label><br>
+      <input type="text" name="subject" class="form-control " value="{{data.subject}}">
+    </div><br>
+    
+    <div class="form-group">
+
+        <label class="h6">Description</label><br>
+        <textarea class="form-control" rows="5" cols="50" name="desc">
+          
+          </textarea>
+</div><br>
+
+
+<div class="form-group">
+  <label class="h6" >Current Categeory: {{data.category}}</label><br>
+
+  <label class="h6" >Change Categeory</label><br>
+  <select class="form-control" name="catgry">
+      <option>Inside sales</option>
+      <option>Outside sales</option>
+      
+    </select>
+</div><br>
+<br>
+
+<div class="form-group">
+  <label class="h6" >Current Priority: {{data.priority}}</label><br>
+
+  <label class="h6" >Change Priority</label><br>
+  <select class="form-control" name="priority" value="{{data.priority}}">
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+    </select>
+</div><br>
+
+<div class="form-group">
+
+  <label class="h6" >Current Status: {{data.status}}</label><br>
+  <label class="h6" >Change To</label><br>
+  <select class="form-control" name="status">
+      <option >Open</option>
+      <option>Close</option>
+    </select>
+</div><br>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+
+        
+
+{% endblock contents %}

@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{% block contents %}
+
+<h4>Ticket List</h4>
+<br>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Ticket No</th>
+      <th scope="col">Ticket Id</th>
+      <th scope="col">Update</th>
+      <th scope="col">Subject</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {% for d in info %}
+    <tr>
+      
+      <th scope="row">{{d.ticketNumber}}</th>
+      <td>{{d.id}}</td>
+      <td><a href="{% url 'details' d.id%}">Update Ticket</a></td>
+      <td> {{d.subject}}</td>
+      
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+
+
+{% endblock contents %}
+        
+
+ 
+       
